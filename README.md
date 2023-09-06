@@ -1,7 +1,5 @@
 # Advanced_Physical_Design_using-_OpenLane
-# Physicaldesign_openlane
 
-This project is done in the course ["Advanced Physical Design using OpenLANE/Sky130"]
 
 ## Table of Contents
 
