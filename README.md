@@ -21,6 +21,41 @@ ISA: In layman's terms, ISA or Instruction Set Architecture is simply the langua
   <details>
   <summary>SOC design and OpenLane</summary>
 
+Digital ASIC design using Open Source Tools: 
+1) RTL Designs: libcores.org, opencores.org,github.com
+2) EDA Tools: Qflow, OpenRoad, OpenLane
+3) PDK: Google:Skywater
+  
+ASIC flow: RTL TO GSDII flow: 
+__Synthesis -> Floor and PowerPlan -> Placement -> Clock Tree Synthesis -> Routing -> SignOff (Tapeout)__
+
+
+Synthesis: RTL to gate level Netlist. 
+FloorPLan: Patrition and pinrows ets. Powerpin connections to rails
+PLacement: Alignment- Global and Detailed 
+CTS: Clock Network design
+Routing: Implement Interconnect using metal layers, Global and deayled routing 
+GDSII: DRC,LVS,STA and tapeout.
+
+
+Challenges with Open Source Tools: Configuration, Calibration and some missing tools can be encountered while building an ASIC chip which must be effectively dealt with.
+
+OpenLane and STrive Chipsets
+
+Skywater PDK is used. Openlane provides a large number ofdesign examples and can be used to harden macros and chips. It is containerized and tuned for skywater130nm pdk.
+
+
+OpenLane ASIC flow: To build clean GDSII . 
+
+The following diagram gives a detailed explanantion of ASIC flow through OpenLane
+
+
+
+
+
+
+
+
   </details>
 
 
