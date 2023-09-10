@@ -567,6 +567,97 @@ The sitching threshold of a CMOS inverter is the point on the transfer character
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/15ea3478-ea97-4b03-85e7-4aacc31b4770)
 
 
+__Static and Dynamic Simulation__
+
+MOdify the above circuit file as below:
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9f6d0e29-1cc3-4285-8f29-c5e03c062d39)
+
+
+Now run the transient analysis:
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/d9fd644a-2b89-43b8-a5c3-5c00b950504e)
+
+
+Now for this rise and fall delays can be calculated by finding difference between out and in curves, to find the difference between two graph points just drag with mouse and it will zoom and then you can just click on the graph. It gives the x and y coordinates.
+
+
+
+
+__VSDSTDCelldesign Lab__
+
+
+Steps:
+
+```
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech sky130_inv.mag &
+
+```
+
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/92560906-6011-4889-865b-d3c8751cd7a2)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/da545018-d088-4cff-be77-cc0880c13ec3)
+
+
+</details>
+
+
+<details>
+  <summary>Inception of Layout</summary>
+
+
+__Create Active Regions__
+
+_16 Mask CMOS Fabrication_
+
+1) Selecting a substrate: P type, dimensions, orientation.
+   Doping and resisitivity.
+2) Create active regions: Pockets in the substrate. Pockets need isolation between each and everyone of them.
+   First, SiO2 layer is grown, then Si3N4, on top of these 1um of photoresist.
+   
+   ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/28b8a041-8c46-44f2-9f8d-675e9c0a1986)
+
+    Now etching off and then put it into an oxidation furnace.
+
+   __Formation of wells__
+
+   3) Formation of n well and p well : The formation of N-well and P-well regions in CMOS technology involves ion implantation using specific dopants. Boron is utilized for P-well formation, while Phosphorus is employed for N-well creation. These dopants are implanted into the silicon substrate to define the N-well and P-well regions, which are essential components for building complementary NMOS and PMOS transistors, respectively.
+
+__Formation of gate__
+
+  4)Formation of gate terminal: The gate terminals for NMOS (N-channel Metal-Oxide-Semiconductor) and PMOS (P-channel Metal-Oxide-Semiconductor) transistors are created through photolithography techniques. In this process, precise patterns are defined on the semiconductor substrate using masks and light exposure. These patterns correspond to the gate electrodes of the transistors, and they play a fundamental role in controlling the transistor's conductivity and operation. By carefully implementing photolithography, the gate terminals for both NMOS and PMOS transistors are formed with high precision, enabling the subsequent steps in transistor fabrication.
+
+__Drain Formation__
+
+  5)LDD (lightly doped drain) formation: Here, additional ion implantation steps are introduced after the formation of the main source and drain regions of the transistor. The key idea is to create lightly doped regions adjacent to the main source and drain regions. These lightly doped regions serve as a buffer between the channel and the heavily doped source and drain regions. The purpose of the LDD regions is to reduce the strength of the electric field near the drain, particularly in the region where the channel meets the drain. This helps to prevent the acceleration of electrons to high energies, which can lead to the hot electron effect. The hot electron effect can cause damage to the gate oxide and result in long-term reliability issues for the transistor.
+
+__SOurce Formation__
+
+  6)Source & drain formation: The formation of the source and drain regions in a semiconductor device is a critical step in the fabrication process. To ensure proper performance and avoid issues like channeling during ion implantation, several techniques are employed, including the use of a screen oxide layer, arsenic implantation, and annealing. Screen Oxide: Before performing the source and drain ion implantation, a thin layer of screen oxide is deposited or grown on the semiconductor wafer's surface. The screen oxide serves as a protective layer during the implantation process. It helps to disperse and slow down the implanted ions, reducing the likelihood of channeling. Arsenic Implantation: Arsenic (As) ions are implanted into the regions of the silicon substrate where the source and drain are to be formed. Arsenic is a common dopant used for N-type (electron-conducting) regions in CMOS technology. The implantation process introduces a controlled amount of arsenic atoms into the silicon lattice, creating N-type doping in the source and drain regions. Annealing: After the arsenic implantation, the wafer is subjected to an annealing process. Annealing involves heating the wafer to high temperatures for a specified duration. During annealing, the implanted arsenic ions are activated, and any damage to the silicon crystal lattice caused by the implantation process is repaired. Annealing helps to ensure that the source and drain regions have the desired electrical properties.
+
+__Interconnects Formation__
+
+  7)Local interconnect formation: Local interconnect formation is a important step in semiconductor device fabrication, enabling the creation of electrical connections between different components on a chip. Screen Oxide Removal (HF Etching): After various processing steps, including source and drain formation, a screen oxide layer is typically deposited or grown on the semiconductor wafer's surface. This screen oxide layer serves as a protective barrier during ion implantation. However, it needs to be removed to allow for the formation of local interconnects. HF Etching: Hydrofluoric acid (HF) is commonly used to selectively etch away the screen oxide. HF is highly effective at removing silicon dioxide (SiO2) while leaving other materials like silicon (Si) and metal layers unaffected. Deposition of Ti (Titanium): Once the screen oxide is removed, the next step involves depositing a layer of titanium (Ti) onto the wafer's surface. Titanium is chosen for its excellent adhesion properties and low electrical resistance. Low-Resistance Contacts: Titanium serves as the base layer for creating low-resistance electrical contacts or interconnects. It acts as an adhesion layer for subsequent metal layers (typically aluminum or copper) that will be deposited to form the actual interconnects. 8.Higher level metal formation: The higher-level metal formation in semiconductor device fabrication involves creating additional layers of metal interconnects to connect various components and ensure proper functionality. Chemical-Mechanical Polishing (CMP) for Planarization: After the initial layers of metal interconnects and insulating layers have been deposited and patterned, the surface of the wafer can become uneven due to the topography of the underlying structures. To ensure a flat and planar surface, CMP is employed. CMP: Chemical-Mechanical Polishing is a process that uses a combination of chemical etching and mechanical abrasion to remove excess material and achieve a smooth, flat surface. It is important for ensuring uniform layer thickness in subsequent metal layers. Top SiN (Silicon Nitride) Layer for Chip Protection: To protect the completed chip from environmental factors, moisture, and physical damage, a top layer of silicon nitride (SiN) is deposited. Silicon nitride is an excellent insulator and provides a robust protective barrier. Chip Protection: This top SiN layer acts as a passivation layer, shielding the underlying components from external influences. It also helps prevent contamination and ensures the long-term reliability of the integrated circuit.
+
+__HIgh Level Metal Formation__ 
+
+  8)Higher level metal formation: CMP for planarization followed by TiN and Tungsten deposition. Top SiN layer for chip protection.
+
+  __Lab: BASIC LAYERS__
+  
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/d27b673f-daed-441b-bfd4-d94e533e14c8)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/4595b0f2-7f81-4686-9ba3-d1d34f447c76)
+
+
+  
+</details>
+
+
 ## Acknowledgements
 
 
