@@ -433,6 +433,8 @@ Low transition time = time(slew_high_fall_thr) - time (slew_low_fall_thr)
 
 <details>
   <summary> Labs for NGSPice simulations of CMOS Inverter</summary>
+
+  
 __Spice deck creation for CMOS Inverter__
 
 Spice Deck: It is basically a netlist. It has information about components, interconnects etc.
@@ -551,13 +553,18 @@ To run the circuit in ngspice,
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/2eca6174-bc36-4679-b3c4-2e19a4237e0b)
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f172fa8c-f49b-4382-a70f-e70770b0e7e1)
+![Screenshot from 2023-09-10 23-01-19](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/212317e9-8617-4b5f-825b-82bcc35f7ee1)
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/5b95daa9-1843-41cf-ab13-b30c269f3e41)
 
 
 
+__Switching Threshold__
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/a70a3dfb-c84d-4d38-bcfb-aabf720956e6)
 
+The sitching threshold of a CMOS inverter is the point on the transfer characteristic where Vin equals Vout (=Vm). At this point both PMOS and NMOS are in ON state.
 
-
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/15ea3478-ea97-4b03-85e7-4aacc31b4770)
 
 
 ## Acknowledgements
