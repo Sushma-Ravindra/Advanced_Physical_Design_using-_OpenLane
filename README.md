@@ -276,6 +276,14 @@ Timing analysis is done for the existing conditions wherein buffers are already 
 __Need for Library Characterization__
 
 
+STEPS: 
+1) Logic Synthesis: Output will be the netlist with gates and their interconnections.
+2) Floorplan: Netlist import and sizes of die and wafer are decided
+3) Placement: Positions are decided based on timing constraints.
+4) ClockTreeSynthesis: Clock signal reaching all clock ports.
+5) Routing: Interconnects and wiring.
+
+Library characterization is the process of characterizing electronic components and gates, such as logic gates, flip-flops, and other building blocks, to create models that accurately represent their behavior under various conditions. This characterization provides information about how components respond to different inputs, delays, power consumption, and more. These components are common in all the above steps of the design flow.
 
 
 
