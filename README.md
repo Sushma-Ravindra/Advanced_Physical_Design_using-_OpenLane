@@ -229,13 +229,19 @@ run_floorplan
 
 To view results Magic is invoked after moving to the results/floorplan directory:
 
+```
+cd /OpenLane/designs/picorv32a/runs/RUN_2023.09.10_07.02.28/results/floorplan
+
+magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.min.lef def read picorv32.def
+
+```
 
 
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/b6d622ab-e8f7-4322-bb5a-77e2096efe6c)
 
 
-
-
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/cab845d6-30b0-4414-961f-0066e4c3df49)
 
 
 
@@ -243,9 +249,12 @@ To view results Magic is invoked after moving to the results/floorplan directory
 
 
 
+<details>
+  <summary> Library Binding and Placement </summary>
 
+ __Netlist Binding and Initial Place design__
 
-
+ 
 
 
 
