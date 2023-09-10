@@ -178,10 +178,55 @@ Utilization factor of 1 means the chip is square chip.
 
 
 
+__Concept of Preplaced Cells__
+
+Pre-placed cells are IPs comprising huge combinational logic which once placed, maintain a fixed position. Since they are placed before placement and routing, the are known as pre-placed cells.
+These pre placed cells can be implemented as an out of the box compoenent of the whole circuit. Therefore , it provides for reuse of these IP blocks. Ips can be Memory blocks, clocks or gating cells, comparator or muxes. 
+Since they are placed before placement and routing, the are known as pre-placed cells.Once their placement is decided then the synthesis tool will not touch them.
+Unlike standard cells in a digital design, which are typically placed automatically by place-and-route tools, pre-placed cells are manually positioned by the designer. The designer selects specific locations on the chip for these cells based on design considerations, performance requirements, or other constraints.
+Thus they are implemenetd once and reused again and again. Thus they are placed cliser to input pins.
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/b35f90f5-5c84-41a2-bd7d-62fd87667e5d)
+
+
+__Decoupling Capacitors__
+
+Pre-placed cells must then be surrounded with decoupling capacitors (decaps). The resistances and capacitances associated with long wire lengths can cause the power supply voltage to drop significantly before reaching the logic circuits. This can lead to the signal value entering into the undefined region, outside the noise margin range. Decaps are huge capacitors charged to power supply voltage and placed close the logic circuit. Their role is to decouple the circuit from power supply by supplying the necessary amount of current to the circuit. They pervent crosstalk and enable local communication.
+Switching requires huge cuurent surge by the components.
+Decoupling capacitors are essential components in electronic circuit design that help maintain a stable power supply, filter out noise, and improve the overall performance and reliability of electronic systems, particularly in digital and mixed-signal applications. Proper selection, placement, and sizing of decoupling capacitors are critical for their effectiveness in reducing noise and maintaining voltage stability.
+They are huge capacitances which are charged, they help in decoupling the circuits from the supply during switching. During switching , it discharges, else it replenished from the power supply.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/6addf8c7-5509-4d44-a888-e3bcc16028c7)
+
+
+
+__Power Planning__
+
+Consider a 16 bit bus where in multiple capacitance need to discharge simultaneouslt based on the 16 bit input shream, thus a ground bounce is observed which is a surge compared to the normal 0 voltage value. Similar effect can be observed in Vdd as well.
+Each block on the chip, however, cannot have its own decap unlike the pre-placed macros. Therefore, a good power planning ensures that each block has its own VDD and VSS pads connected to the horizontal and vertical power and GND lines which form a power mesh.
+
+
+__Pin PLacement__
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </details>
-
-
 
 
 
