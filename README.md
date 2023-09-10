@@ -256,11 +256,9 @@ magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../.
 
  First we need to bind the netlist with physical cells. We have shapes for OR, AND and every cell for pratice purpose. But in reality we dont have such shapes, we have give an physical dimensions like rectangles or squares weight and width. This information is given in libs and lefs. Now we place these cells in our design by initilaising it.
  The next step in the OpenLANE ASIC flow is placement. The synthesized netlist is to be placed on the floorplan. Placement is perfomed in 2 stages:
-
-    Global Placement: It finds optimal position for all cells which may not be legal and cells may overlap. Optimization is done through reduction of half parameter wire length.
-    Detailed Placement: It alters the position of cells post global placement so as to legalise them.
-
-Legalisation of cells is important from timing point of view.
+ Global Placement: It finds optimal position for all cells which may not be legal and cells may overlap. Optimization is done through reduction of half parameter wire length.
+ Detailed Placement: It alters the position of cells post global placement so as to legalise them.
+ Legalisation of cells is important from timing point of view.
 
 
 
