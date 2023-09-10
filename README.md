@@ -56,6 +56,30 @@ The following diagram gives a detailed explanantion of ASIC flow through OpenLan
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/56d2d88a-3185-428c-ad7e-21c89dbc6e22)
 
+Below is the simplified flow:
+
+    RTL Design (Register-Transfer Level): At this stage, engineers create a high-level description of the desired chip's functionality using a hardware description language like VHDL or Verilog. This description defines how data moves between registers and logic gates in the chip.
+
+    Synthesis: The RTL code is synthesized into a gate-level representation. This step transforms the high-level description into a netlist of logic gates that can be implemented in silicon. Optimization techniques are applied to improve performance, power consumption, and area usage.
+
+    Floorplanning: Engineers create a layout plan, or floorplan, that specifies where different functional blocks will be placed on the chip. This step considers factors like power distribution and signal routing.
+
+    Placement : The synthesized gates are physically placed on the chip according to the floorplan. This step aims to minimize the physical distance between related gates to improve performance.
+
+    Routing: Wires are connected between the gates to establish the logical connections defined in the RTL code. This step involves complex algorithms to optimize for speed, power, and area.
+
+    Physical Verification : The design is thoroughly checked for issues like timing violations, manufacturing defects, and design rule violations. Tools ensure that the chip will function correctly and be manufacturable.
+
+    Mask Generation: The final layout, or mask, is generated based on the design. This mask provides a blueprint for the semiconductor fabrication process.
+
+    Manufacturing: The mask is used to manufacture the physical semiconductor wafer in a semiconductor fabrication facility (fab). This involves a series of intricate processes, including photolithography, etching, and doping, to create the actual chip.
+
+    Testing: After fabrication, each chip is rigorously tested to identify defects and ensure functionality.
+
+    Packaging: The individual chips are packaged into protective casings that include pins or connectors for interfacing with other electronic components.
+
+    GDS2 Format: GDS2 is a file format used to represent the final chip layout and mask data. It contains information about the physical layout of the chip, including the positions of gates, wires, and other elements.
+
 
 
 
@@ -64,11 +88,29 @@ The following diagram gives a detailed explanantion of ASIC flow through OpenLan
 
   </details>
   <details>
-  <summary>Opensource EDA toosl</summary>
+  <summary>Opensource EDA tools</summary>
 
-__OpenLane Directory Structure__
+__Installing OpenLane__
 
+```
+git clone https://github.com/The-OpenROAD-Project/OpenLane
+cd OpenLane
+make
+make test
 
+```
+__Invoking OpenLne__
+
+```
+make mount
+./flow.tcl -interactive
+package reqire openlane 0.9
+prep -design picorv32a
+run_synthesis
+
+```
+
+Below obtained is the synthesis report:
 
 
 
