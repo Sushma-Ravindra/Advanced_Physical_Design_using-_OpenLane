@@ -692,27 +692,117 @@ PULSE(V1 V2 Tdelay Trise Tfall Ton Tperiod Ncycles)
 thus, X=1.2444408e-08 Y=2.58293
 
 
+Four timing parameters are used to characterize the inverter standard cell:
+
+    Rise transition: Time taken for the output to rise from 20% of max value to 80% of max value
+    Fall transition- Time taken for the output to fall from 80% of max value to 20% of max value
+    Cell rise delay = time(50% output rise) - time(50% input fall)
+    Cell fall delay = time(50% output fall) - time(50% input rise)
+
+
+
+
+
 __MAGIC and DRC Rules__
 
+Go to this website:  ``` http://opencircuitdesign.com/magic/ ```
+
+To be able to use its lab contents:
+
+```
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+tar xfz drc_tests.tgz
+cd drc_tests
+magic -d XR met3.mag
+```
+
+![Screenshot from 2023-09-11 01-31-24](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/59ce9d05-17e4-4b14-b44c-be4983d80b29)
+
+
+Below is the periphery rules link :https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#m3
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/e5c76406-f82b-4751-85dd-947fc634203f)
+
+
+
+Now create a box and hover over the metal3 on the sidepar and press 'p' on the keyboard (p for paint) , You can also undo by pressing the 'u' key :
+
+
+You can also make a box on elements to see metalcuts.
+
+Then type below command (to see metalcuts) in magic terminal :
+
+```
+cif see VIA2
+
+```
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/d62185b6-4ce2-4f5b-ba6c-cce768a40596)
 
 
 
 
+__Fix poly.9 error in sky.tech file__
+
+```
+load poly.mag
+
+```
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/4daaf47a-1acb-421a-b0a6-c1268602de27)
+
+
+Now to edit the sky.tech file. Open it in the text editor using below command:
+
+```
+gedit sky130A.tech
+```
+Now search for the poly.9, there are be 2-3 results: here is one of them :
+
+```
+spacing npres *nsd 480 touching_illegal \
+	"poly.resistor spacing to N-tap < %d (poly.9)"
+```
+Modify it to this :
+```
+spacing npres allpolynonres 480 touching_illegal \
+	"poly.resistor spacing to N-tap < %d (poly.9)"
+```
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/0a40ff8d-5764-4398-ab18-30e836343026)
+
+Now save it. You dont have to close the magic after the modifying the sky.tech file. Type the below command in magic's terminal:
+
+tech load sky130A.tech In the warning click on yes.
+Then type below command:
+
+drc check
+
+
+Modified layout :
+
+![Screenshot from 2023-09-11 01-54-11](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/86a4eb55-bdc1-4f1d-9fb0-facefc858a35)
+
+
+__Challenge exercise to describe DRC error__
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/1a04880b-b022-4c24-b458-113013ecd7c3)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/10a5d5fc-0174-4181-92c3-4868fc1ebfa9)
 
 
 
+```
+cif ostyle drc
+cif see dnwell_shrink
+feed clear
+cif see nwell_missing
+feed clear
+```
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/a2c5edde-dc28-41bc-aa86-ce1948be8b22)
 
 
 
-
-
-
-
-
-
-
-
-
+__ Find missing or incorrect rules (creating magic DRC rule)__
 
 
 
