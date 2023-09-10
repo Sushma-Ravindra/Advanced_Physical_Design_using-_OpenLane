@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [Day1-Introduction](#Day1-introduction)
+- [Day-2- Floorplan and Library Cells](#day-2--floorplan-and-library-cells)
 - [Acknowledgements](#acknowledgements)
   
 
@@ -297,6 +298,32 @@ __Congestion aware Placement__
 
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/291c7b00-0ab1-4c8d-aed9-2a3eb6618738)
+
+</details>
+
+<details>
+  <summary> Cell design and Characterization flows </summary>
+
+__Inputs for cell design flow__
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
