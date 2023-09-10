@@ -283,7 +283,20 @@ STEPS:
 4) ClockTreeSynthesis: Clock signal reaching all clock ports.
 5) Routing: Interconnects and wiring.
 
+   ![WhatsApp Image 2023-09-10 at 14 55 13](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/0cab3e68-76ab-4a27-9415-7041432e692c)
+
+
 Library characterization is the process of characterizing electronic components and gates, such as logic gates, flip-flops, and other building blocks, to create models that accurately represent their behavior under various conditions. This characterization provides information about how components respond to different inputs, delays, power consumption, and more. These components are common in all the above steps of the design flow.
+
+__Congestion aware Placement__
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/6b9ab3a6-0af7-40dd-a14d-ba20a4f7554d)
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/3121648b-a571-4cfc-9187-7b36b11e3c39)
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/291c7b00-0ab1-4c8d-aed9-2a3eb6618738)
 
 
 
