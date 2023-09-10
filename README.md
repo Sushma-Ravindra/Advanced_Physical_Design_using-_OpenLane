@@ -622,7 +622,8 @@ _16 Mask CMOS Fabrication_
 
     Now etching off and then put it into an oxidation furnace.
 
-   __Formation of wells__
+
+__Formation of wells__
 
    3) Formation of n well and p well : The formation of N-well and P-well regions in CMOS technology involves ion implantation using specific dopants. Boron is utilized for P-well formation, while Phosphorus is employed for N-well creation. These dopants are implanted into the silicon substrate to define the N-well and P-well regions, which are essential components for building complementary NMOS and PMOS transistors, respectively.
 
@@ -653,9 +654,88 @@ __HIgh Level Metal Formation__
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/4595b0f2-7f81-4686-9ba3-d1d34f447c76)
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f4e8af8c-2cdc-4a05-bb7a-2704f75f64c9)
 
   
 </details>
+
+
+<details>
+  <summary>Tech file Labs</summary>
+
+
+
+  Once the parasitics are extraced into spice, it will look like this
+
+```
+    extract all
+    ext2spice cthresh 0 rethresh 0
+    ext2spice
+```
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/32425498-49df-4c54-8bd2-185d295773bd)
+
+
+__CHaracterize inverter__
+
+PULSE(V1 V2 Tdelay Trise Tfall Ton Tperiod Ncycles)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/88f504a4-2ae2-4db8-a9ed-47c70a156f36)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/3352ae6e-a689-4d57-b7c7-db650b5ef42f)
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/a7daf01c-3cb0-49b5-8137-a5e010b568e0)
+
+
+thus, X=1.2444408e-08 Y=2.58293
+
+
+__MAGIC and DRC Rules__
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</details>
+
+
+
+
 
 
 ## Acknowledgements
