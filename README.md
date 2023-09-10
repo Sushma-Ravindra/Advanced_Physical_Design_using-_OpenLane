@@ -373,6 +373,8 @@ Now all these 8 steps are fed in together as a configuration file to a character
 
 __Timing threshold definitions__
 
+
+
 Timing characterization is essential for ensuring that digital circuits meet their timing requirements. It involves determining the timing behavior of various elements within the IC, such as logic gates, flip-flops, and interconnections, under different operating conditions.
 
 Setup Time: The amount of time before the clock edge that data must be stable to be correctly captured by a flip-flop. Hold Time: The amount of time after the clock edge that data must remain stable to be correctly captured.
