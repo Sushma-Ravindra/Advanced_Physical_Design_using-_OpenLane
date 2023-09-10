@@ -254,14 +254,26 @@ magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../.
 
  __Netlist Binding and Initial Place design__
 
- First we need to bind the netlist with physical cells. We have shapes for OR, AND and every cell for pratice purpose. But in reality we dont have such shapes, we have give an physical dimensions like rectangles or squares weight and width. This information is given in libs and lefs. Now we place these cells in our design by initilaising it.
+ Library contains info about shape, size, delays,various flavours etc of every cell(gates).
+ First we need to bind the netlist with physical cells. We have shapes for OR, AND and every cell for pratice purpose. But in reality we dont have such shapes, we have give an physical dimensions like rectangles or squares weight and width.This information is given in libs and lefs. Now we place these cells in our design by initilaising it.
  The next step in the OpenLANE ASIC flow is placement. The synthesized netlist is to be placed on the floorplan. Placement is perfomed in 2 stages:
  Global Placement: It finds optimal position for all cells which may not be legal and cells may overlap. Optimization is done through reduction of half parameter wire length.
  Detailed Placement: It alters the position of cells post global placement so as to legalise them.
  Legalisation of cells is important from timing point of view.
 
 
+__Optimize Placement__
 
+Considering wire lengths that ccontribute to its capacitances and further delay, we try to optimize the placements by inserting repeaters etc. 
+
+![WhatsApp Image 2023-09-10 at 14 06 20](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/e9b2b829-0a75-4cc8-a88f-ec73717e190f)
+
+
+__Final Placement OPtimization__
+
+Timing analysis is done for the existing conditions wherein buffers are already placed. For high frequrncy circuits, components are placed close to each other so as to not cause any sort of wire delays.
+
+__Need for Library Characterization__
 
 
 
