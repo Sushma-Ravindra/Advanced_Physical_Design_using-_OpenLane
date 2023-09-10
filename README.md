@@ -143,8 +143,36 @@ Below obtained is the synthesis report:
 
 __Utilization Factor and Floorplanning__
 
+Physical processor core is an independent execution unit that can run one program thread at a time in parallel with other cores.
+
+Processor die is a single continuous piece of semiconductor material (usually silicon). A die can contain any number of cores. Up to 15 are available on the Intel product line. Processor die is where the transistors making up the CPU actually reside.
+
+Processor package is what you get when you buy a single processor. It contains one or more dies, plastic/ceramic housing for dies and gold-plated contacts that match those on your motherboard.
+
+Core:
+The width of the core typically refers to the physical size or dimensions of the central processing unit (CPU) or processor core within a microchip. It is usually measured in nanometers (nm) or micrometers (µm). For example, you might hear about a "14nm core" or a "7nm core," indicating the feature size of the core's transistors.
+The height of the core is not commonly referred to in the same way as the width. Instead, the core's size is usually described in terms of its area, which is determined by multiplying its width and height.
+
+Die (also known as the chip or silicon die):
+The width of the die is typically the physical measurement of the semiconductor wafer after all the individual ICs (integrated circuits) have been fabricated on it but before they are cut apart. Die widths can vary significantly depending on the specific manufacturing process and the design of the chips being produced. They can range from a few millimeters to several centimeters or more.
+
+Similar to the core, the height of the die is not a common parameter of discussion. Instead, the die's size is often described in terms of its area, which is the product of its width and height.
+
+![Screenshot from 2023-09-10 11-16-00](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/2b43fd32-ef7d-44bc-ae01-a748dfa74705)
+
+Utilization factor of 1 means the chip is square chip.
 
 
+```
+  Utilisation Factor =    Area occupied by netlist
+                       __________________________
+                          Total area of core
+
+  Aspect Ratio =  Height
+                 ________
+                  Width
+
+```
 
 
 
