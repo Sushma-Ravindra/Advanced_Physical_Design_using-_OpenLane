@@ -110,13 +110,60 @@ run_synthesis
 
 ```
 
+![Screenshot from 2023-09-10 10-46-13](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/41dad0ac-486a-4aa5-b7e5-a05d4d8b9866)
+
+
+![Screenshot from 2023-09-10 10-46-06](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/58eae739-fec1-4eb8-990b-001d73b50c94)
+
+
+
 Below obtained is the synthesis report:
 
 
 
-  
+![Screenshot from 2023-09-10 10-52-43](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/5da4cd23-0fe1-48e5-8eed-e7c2a0178a47)
 
-  </details>
+
+![Screenshot from 2023-09-10 10-56-46](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/a76aa8ad-339c-4990-abcb-3d409fdfad04)
+
+  
+![Screenshot from 2023-09-10 10-59-14](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/4f084d39-b8ab-4cfc-9231-f9ecbb6adb37)
+
+ 
+  
+</details>
+
+
+
+## Day2 
+
+<details>
+  <summary>Chip Floorplanning Considerations</summary>
+
+
+__Utilization Factor and Floorplanning__
+
+
+
+
+
+
+
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
