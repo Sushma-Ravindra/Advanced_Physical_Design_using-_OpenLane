@@ -802,14 +802,26 @@ feed clear
 
 
 
-__ Find missing or incorrect rules (creating magic DRC rule)__
+
+__Find missing or incorrect rules (creating magic DRC rule)__
+
+Modification:
+
+```
+cifmaxwidth nwell_untapped 0 bend_illegal \
+
+	"Nwell missing tap (nwell.4)"
+```
 
 
+TO check DRC 
 
+```
+tech load sky130A.tech drc check drc style drc(full) drc check
 
+```
 
-
-
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/077b380d-6899-4706-bd67-6192bcdec869)
 
 
 
