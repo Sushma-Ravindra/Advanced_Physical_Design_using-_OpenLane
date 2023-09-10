@@ -209,12 +209,25 @@ Each block on the chip, however, cannot have its own decap unlike the pre-placed
 
 __Pin PLacement__
 
+The netlist defines connectivity between logic gates. The place between the core and die is utilised for placing pins. The connectivity information coded in either VHDL or Verilog is used to determine the position of I/O pads of various pins. Then, logical placement blocking of pre-placed macros is performed so as to differentiate that area from that of the pin area.
+The netlist specifies how the logic gates within the chip are interconnected. It provides information about which gates are connected to one another and how signals flow through the design.
+After the I/O pad positions are determined, the design process includes logical placement blocking of pre-placed macros. This step involves arranging pre-placed macros (blocks of predefined logic) in a way that distinguishes them from the area reserved for the I/O pins. This separation ensures that the macros do not interfere with the connectivity and signal paths associated with the pins.
+Clock pins are bigger in size because they drive the whole circuit and so we need least resistnace path for it.
+
+![WhatsApp Image 2023-09-10 at 12 02 58](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/967c0dcc-fd8d-45e6-88de-bf56a1ed7627)
 
 
 
+__Floorplan using openlane__
 
+To run floorplan in openlane:
 
+```
+run_floorplan
 
+```
+
+To view results Magic is invoked after moving to the results/floorplan directory:
 
 
 
