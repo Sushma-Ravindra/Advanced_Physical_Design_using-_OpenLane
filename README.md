@@ -5,6 +5,7 @@
 
 - [Day1-Introduction](#Day1-introduction)
 - [Day-2- Floorplan and Library Cells](#day-2--floorplan-and-library-cells)
+- [Day-3-Magic Layout and NG spice characterization](#day-3-magic-layout-and-ng-spice-characterization)
 - [Acknowledgements](#acknowledgements)
   
 
@@ -303,26 +304,135 @@ __Congestion aware Placement__
 
 <details>
   <summary> Cell design and Characterization flows </summary>
+  
 
 __Inputs for cell design flow__
 
+Steps:
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/c029d960-899b-4ae4-b1a3-b7a1956b8ac4)
 
 
 
+Inputs: PDKs:Basically reules given by the foundries, such as DRCs and LVS rules spice models and user defined specs.
+
+User defined specs: Cell height is difference between ground and supply raild. Similarly, width is defined by drive strength which must be designed by library developer.
+Other such specs are power supply, metal layers, pin locations etc.
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/1c4ec075-ea8d-4494-9942-0c8253ac39a8)
+
+
+__Circuit Design step__
+
+Design Steps: Circuit design, characerization of parameters such as drain current, vth etc. Output of this stage is a .cdl file
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/cf9e8efc-d107-4353-9bdb-177525b62a6b)
+
+
+__Layout design step__
+
+The function is implemented using NMOS and PMOS and then their network graphs is obtained. Then Euler's path(path traversed only 1 time) enables us to draw the stick diagrams.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/2c101c91-5752-44bb-add0-46d0150980f6)
+
+This stick diagram is converted into layout using the DRC rules etc.  This is the library cell. 
+The output will be GDSII, lef and netlist. ALso, timing, noise etc can also be extracted from here. 
+
+
+__Characterization Flow__
+
+
+Characterization in VLSI refers to the process of analyzing and documenting the electrical behavior of electronic components, such as transistors, logic gates, memory cells, and standard cells, under various operating conditions. Characterization is essential for accurate circuit simulation and helps ensure that integrated circuits (ICs) meet their performance, power, and timing requirements.
+The following is the flow:
+
+1)Read in the models and tech files
+2)Read extracted spice Netlist
+3)Recognise behavior of the cells
+4)Read the subcircuits
+5)Attach power sources
+6)Apply stimulus to characterization setup
+7)Provide neccesary output capacitance loads
+8)Provide neccesary simulation commands
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/5abfbaae-3c89-4eb6-b32b-a8aa2ba3c7bc)
 
 
 
+Now all these 8 steps are fed in together as a configuration file to a characterization software called GUNA. This software generates timing, noise, power models. These .libs are classified as Timing characterization, power characterization and noise characterization.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/db1941b4-a859-41c5-8973-e173d1d5b463)
 
 
+</details>
+
+<details>
+  <summary> General Timing characterization Parameters</summary>
 
 
+__Timing threshold definitions__
+
+Timing characterization is essential for ensuring that digital circuits meet their timing requirements. It involves determining the timing behavior of various elements within the IC, such as logic gates, flip-flops, and interconnections, under different operating conditions.
+
+Setup Time: The amount of time before the clock edge that data must be stable to be correctly captured by a flip-flop. Hold Time: The amount of time after the clock edge that data must remain stable to be correctly captured.
+
+Delay Calculation: Characterize the delays of logic gates, flip-flops, and interconnects. Calculate the propagation delay from the input of a circuit element to its output.
+
+Clock Skew Analysis: Analyze the variation in clock arrival times at different parts of the circuit. Clock skew can impact the synchronization of sequential elements and can be critical in high-speed designs.
+
+Corner Case Characterization: Perform timing characterization under different process corners (fast corner and slow corner) to account for manufacturing variations. Analyze worst-case scenarios to ensure robust operation.
+
+Post-Layout Timing Analysis: After physical design and layout, perform post-layout timing analysis to account for the actual interconnection delays and verify that the design still meets timing constraints.
+
+```
+Timing defintion 	  Value
+slew_low_rise_thr 	20% value
+slew_high_rise_thr 	80% value
+slew_low_fall_thr 	20% value
+slew_high_fall_thr 	80% value
+in_rise_thr 	      50% value
+in_fall_thr 	      50% value
+out_rise_thr 	      50% value
+out_fall_thr 	      50% value
+
+```
+
+__Propogation Delay and Transistion Time__
+
+Propagation Delay The time difference between when the transitional input reaches 50% of its final value and when the output reaches 50% of its final value. Poor choice of threshold values lead to negative delay values. Even though we have taken good threshold values, sometimes depending upon how good or bad the slew might be, the delay might be still +ve or -ve.
+This can happen if threshold somehow moves upwards or downwards. 
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/d56e74d3-edce-416f-aff3-f427e4cb4032)
 
 
+```
+Propagation delay = time(out_*_thr) - time(in_*_thr)
+
+```
+
+Transistion Time The time it takes the signal to move between states is the transition time , where the time is measured between 10% and 90% or 20% to 80% of the signal levels.
 
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/2f0514d7-f902-4ca6-a97f-98a8ef9a2b44)
 
 
+```
+Rise transition time = time(slew_high_rise_thr) - time (slew_low_rise_thr)
 
+Low transition time = time(slew_high_fall_thr) - time (slew_low_fall_thr)
+
+```
+
+</details>
+
+## Day3
+
+
+<details>
+  <summary> Labs for NGSPice simulations of CMOS Inverter</summary>
+
+__IO placer revision__
 
 
 
