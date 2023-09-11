@@ -836,6 +836,79 @@ tech load sky130A.tech drc check drc style drc(full) drc check
 
 __Steps to convertgrid info to track info__
 
+Ports as specified in tracks.info are required to be at intersection of horizontal and vertical tracks. The CMOS Inverter ports A and Y are on li1 layer. It needs to be ensured that they're on the intersection of horizontal and vertical tracks. 
+
+![Screenshot from 2023-09-11 11-25-48](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9c8d24d3-6af3-47f3-b0e3-d83b232ed504)
+
+Track info is now converted to grid info
+```
+In tkcon prompt: grid 0.46um 0.34um 0.23um 0.17um
+
+```
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/cd78e20e-2855-456d-bcd2-6a3761118158)
+
+
+__STeps to convert layout to lef__
+
+Next step is extracting LEF file for the cell. However, certain properties and definitions need to be set to the pins of the cell which aid the placer and router tool. For LEF files, a cell that contains ports is written as a macro cell, and the ports are the declared PINs of the macro. Our objective is to extract LEF from a given layout (here of a simple CMOS inverter) in standard format. Defining port and setting correct class and use attributes to each port is the first step. Ports of the layout are the pins of lef file.
+
+1)Select port->Edit->text and make the following changes
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fcd4521f-e7c6-417a-a84b-2b6993d0ad0c)
+
+This is followed for Y, VPWR, VGND
+
+![Screenshot from 2023-09-11 11-44-33](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/b04d941b-ea68-4a64-8f12-3b9105a6f1da)
+
+![Screenshot from 2023-09-11 11-45-13](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fe7e03de-8876-44d7-9676-ef20d24e2a12)
+
+![Screenshot from 2023-09-11 11-46-21](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/b73e729f-4b92-4f68-9077-990d53069760)
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/ae8964da-cde7-445c-a7ab-ac3e830c90dc)
+
+
+Thus now, the changes of ports into pins can be viewed on the lef file
+
+![Screenshot from 2023-09-11 12-02-17](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9c8ea8ad-1696-4a40-9f62-b3e87794e297)
+
+
+![Screenshot from 2023-09-11 12-03-05](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/0d4d15af-87d4-42e0-a77d-e5bd761eee98)
+
+
+
+__Steps to include new cell in synthesis__
+
+To include custom cell into syntheis:
+1) Copy file to picorv32a location
+2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
