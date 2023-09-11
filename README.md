@@ -825,17 +825,16 @@ tech load sky130A.tech drc check drc style drc(full) drc check
 
 
 
-
-
-
-
-
-
-
   
 </details>
 
+## Day-4
 
+<details>
+	<summary>Timing modelling using delay tables</summary>	
+</details>
+
+__Steps to convertgrid info to track info__
 
 
 
