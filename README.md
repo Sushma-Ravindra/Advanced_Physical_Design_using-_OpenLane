@@ -882,9 +882,12 @@ __Steps to include new cell in synthesis__
 
 To include custom cell into syntheis:
 1) Copy file to picorv32a location
-2)
+2)In the config.tcl file, make the following changes.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fc43b448-01ea-4165-9aa2-4850a3771516)
 
 
+3)Now run openlane
 
 
 
