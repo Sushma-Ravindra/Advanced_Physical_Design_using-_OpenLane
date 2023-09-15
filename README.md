@@ -1127,11 +1127,68 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
 
 
+	report clock_skew -setup
+
+ This command can be used to check clock skew
+
+To check all the clock buffers, use these commands in openlane 
+
+```
+echo $::env(CTS_CLK_BUFFER_LIST)
+set $::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+```
+
+
  
 </details>
 
 
 
+## Day-5 
+
+
+<details>
+	<summary> Routing and Design Rule Check </summary>
+
+__Maze Routing__
+
+Routing is the process of creating physical connections based on logical connectivity. Signal pins are connected by routing metal interconnects. Routed metal paths must meet timing, clock skew, max trans/cap requirements and also physical DRC requirements.
+
+In grid based routing system each metal layer has its own tracks and preferred routing direction which are defined in a unified cell in the standard cell library.
+
+There are four steps of routing operations:
+
+1. Global routing
+2. Track assignment
+3. Detail routing
+4. Search and repair
+
+The Maze Routing algorithm, such as the Lee algorithm, is one approach for solving routing problems. In this method, a grid similar to the one created during cell customization is utilized for routing purposes. The Lee algorithm starts with two designated points, the source and target, and leverages the routing grid to identify the shortest or optimal route between them.
+The algorithm assigns labels to neighboring grid cells around the source, incrementing them from 1 until it reaches the target (for instance, from 1 to 7). Various paths may emerge during this process, including L-shaped and zigzag-shaped routes. The Lee algorithm prioritizes selecting the best path, typically favoring L-shaped routes over zigzags. If no L-shaped paths are available, it may resort to zigzag routes. This approach is particularly valuable for global routing tasks.
+However, the Lee algorithm has limitations. It essentially constructs a maze and then numbers its cells from the source to the target. While effective for routing between two pins, it can be time-consuming when dealing with millions of pins. There are alternative algorithms that address similar routing challenges.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/160f5d7c-9ed1-4252-a548-4670a0cb9e6f)
+
+
+
+__DRC__
+
+Design Rule Checking (DRC) verifies as to whether a specific design meets the constraints imposed by the process technology to be used for its manufacturing. DRC checking is an essential part of the physical design flow and ensures the design meets manufacturing requirements and will not result in a chip failure. The process technology rules are provided by process engineers and/or fabrication facility.Each process technology will have its own set of rules. The number of DRC rules and complexity of rules increases as the manufacturing technology shrinks at advanced nodes
+DRC verifies whether a design meets the predefined process technology rules given by the foundry for its manufacturing. DRC checking is an essential part of the physical design flow and ensures the design meets manufacturing requirements and will not result in a chip failure. It defines the Quality of chip. They are so many DRCs, let us see few of them
+Design rules for physical wires
+Minimum width of the wire Minimum spacing between the wires Minimum pitch of the wire To solve signal short violation, we take the metal layer and put it on to upper metal layer. we check via rules Via width via spacing
+
+
+
+
+
+
+
+
+ 
+</details>
 
 
 
