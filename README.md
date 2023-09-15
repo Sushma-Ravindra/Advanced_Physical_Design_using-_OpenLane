@@ -1184,15 +1184,76 @@ Minimum width of the wire Minimum spacing between the wires Minimum pitch of the
 
 
 
+</details>
+
+
+<details>
+	<summary> Power Distribution Network and Summary</summary>
+
+
+__Build Power Distribution Network__
+
+PDN must be generated after CTS and post-CTS STA analyses.
+
+```
+gen_pdn
+
+```
+
+__Standard cell power__
+
+The power distribution network has to take the design_cts.def as the input def file.
+Power rings,strapes and rails are created by PDN.
+From VDD and VSS pads, power is drawn to power rings.
+Next, the horizontal and vertical strapes connected to rings draw the power from strapes.
+Stapes are connected to rings and these rings are connected to std cells. So, standard cells get power from rails.
+The standard cells are designed such that it's height is multiples of the vertical tracks /track pitch.Here, the pitch is 2.72. Only if the above conditions are adhered it is possible to power the standard cells.
+There are definitions for the straps and the rails. In this design, straps are at metal layer 4 and 5 and the standard cell rails are at the metal layer 1. Vias connect accross the layers as required.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f011c3f7-7839-4ad6-b14f-ae7655034934)
+
+
+__Routing__
+The Detailed Routing (drt) module in OpenROAD is based on the open-source detailed router, TritonRoute. TritonRoute consists of several main building blocks, including pin access analysis, track assignment, initial detailed routing, search and repair, and a DRC engine. The initial development of the router is inspired by the ISPD-2018 initial detailed routing contest. However, the current framework differs and is built from scratch, aiming for an industrial-oriented scalable and flexible flow.
+TritonRoute provides industry-standard LEF/DEF interface with support of ISPD-2018 and ISPD-2019 contest-compatible route guide format.
+Global routing is basically an estimation of routes required. Detail routing is the actual wire routing that happens and that can be manufactured. Global routing will talk in terms of Number of Routing Resources available and Number of routing resources required. It will split the entire floorplan into equally sized logical elements known as Buckets. Then, it will try to find out how many resources available on each metal level and how many required ( based on No. of pins within the bucket and within its close vicinity). Then calculate a ratio to identify whether there is overflow. If there is overflow for many buckets within a particular area, it determines that the particular area is congested.
+
+Detail routing is actually the proper wire routing. The tool creates the wire and explicitely connects it with pins associated to each other. If the tool cannot route avoiding DRCs/ density of routes in pne particular area is very high , then the terms that the particular area as congested. 
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/53489ccd-c24b-4409-b421-e9993e5c85ac)
 
 
 
  
 </details>
+<details>
+	<summary>Triton Route Features</summary>
+
+
+__Preprocessed route guides__
+
+Performs initial detailed route. Honours preprocessed route guides (obtained after global/fast route). Route guides are followed to satisfy inter- guide connectivity.
+Requirements of preprocessed route guides: Must have unit width and must be in the predefined direction.
+Directions of metal ensures minimum capacitances.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/7e426872-d971-49c7-ae39-3c01b93ed3b7)
+
+
+
+__Inter guide connectivity and intra-inter layer routing__
 
 
 
 
+
+
+
+
+
+
+
+ 
+</details>
 
 
 
