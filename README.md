@@ -1102,6 +1102,28 @@ BOth values are positive and hence there is no violation.
 
 
 Since, clock is propagated, from this stage, we do timing analysis with real clocks. From now post cts analysis is performed by operoad within the openlane flow
+In openroad, execute the following commands
+
+```
+openroad
+read_lef <path of merge.nom.lef>
+read_def <path of def>
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /home/parallels/OpenLane/designs/picorv32a/runs/RUN_09-09_11-20/results/synthesis/picorv32a.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+read_sdc /home/parallels/OpenLane/designs/picorv32a/src/my_base.sdc
+set_propagated_clock (all_clocks)
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+
+```
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f93e8387-ca88-4a88-b809-c8c52436ad85)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fff6a48d-59f0-446e-b6da-f456dcef0dbe)
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/c740d067-c83f-404b-8812-49b2f5bf41b5)
 
 
 
