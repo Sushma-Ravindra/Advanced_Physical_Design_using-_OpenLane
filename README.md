@@ -995,8 +995,25 @@ Review maximum fanout of cells and replace cells with high fanout
 We perform synthesis and found that it has positive slack and met timing constraints.
 
 
+Now to check if our floorplan contains our custom cell,  check .lef file in the tmp folder. 
+
+```
+run_floorplan
+run_placement
+```
 
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fe9f85df-e808-467b-bf66-9182ca7c8b32)
+
+After placement, we check for legality &To check the layout invoke magic from the results/placement directory:
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/982f8694-38cf-43a3-96cb-2ac67ed854fe)
+
+```
+magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+
+```
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/14e817ac-0d87-4fdc-98ff-b8fca1ada511)
 
 
 
