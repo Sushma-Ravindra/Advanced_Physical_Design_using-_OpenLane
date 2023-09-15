@@ -6,6 +6,8 @@
 - [Day1-Introduction](#Day1-introduction)
 - [Day-2- Floorplan and Library Cells](#day-2--floorplan-and-library-cells)
 - [Day-3-Magic Layout and NG spice characterization](#day-3-magic-layout-and-ng-spice-characterization)
+- [Day4-Prelayout timing analysis and clock tree](#day4-prelayout-timing-analysis-and-clock-tree)
+- [DAY-5-Triton Route Features](#day5-triton-route-features)
 - [Acknowledgements](#acknowledgements)
   
 
@@ -1139,8 +1141,6 @@ set $::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
 echo $::env(CTS_CLK_BUFFER_LIST)
 
 ```
-
-
  
 </details>
 
@@ -1232,7 +1232,10 @@ Detail routing is actually the proper wire routing. The tool creates the wire an
 
 __Preprocessed route guides__
 
-Performs initial detailed route. Honours preprocessed route guides (obtained after global/fast route). Route guides are followed to satisfy inter- guide connectivity.
+Performs initial detailed route. Honours preprocessed route guides (obtained after global/fast route).
+Adherence to Pre-Processed Route Guides: TritonRoute places significant emphasis on following pre-processed route guides. This involves several actions:
+Initial Route Guide Analysis: TritonRoute analyzes the directions specified in the preferred route guides. If any non-directional routing guides are identified, it breaks them down into unit widths. Guide Splitting: In cases where non-directional routing guides are encountered, TritonRoute divides them into unit widths to facilitate routing. Guide Merging: TritonRoute merges guides that are orthogonal (touching guides) to the preferred guides, streamlining the routing process. Guide Bridging: When it encounters guides that run parallel to the preferred routing guides, TritonRoute employs an additional layer to bridge them, ensuring efficient routing within the preprocessed guides.
+Route guides are followed to satisfy inter- guide connectivity.
 Requirements of preprocessed route guides: Must have unit width and must be in the predefined direction.
 Directions of metal ensures minimum capacitances.
 
@@ -1242,15 +1245,36 @@ Directions of metal ensures minimum capacitances.
 
 __Inter guide connectivity and intra-inter layer routing__
 
+Two guides are connected if 
+They are on the same metal layer with touching edges or they are on neighbouring metal layers with a non zero vertically overlapped area.
+
+Each unconnected terminal should have its pin shape overlapped by a route guide.
 
 
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/6bfec130-00ad-4b11-bb56-74d984405445)
 
 
 
+__Method to Handle Connectivity__
+
+The inputs to triton detailed route are lef file, def file, preprocessed route guides.
+THe outputs are detailed routing solutions with optimized wire length and via coun.
+Constraint files: Route guide honoring, connectivity constraints and design  rules.
 
 
+Access Point: An on grid metal poiny on the route guide, used to connect to lower layer segments, upperlayer pins or io ports.
 
+Access Point Cluster: A collection of all access points derived from lower layer segments upper layer guide a pin or an io port.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/194a64ca-d273-4ea1-9ea1-10280b0518f8)
+
+
+__Topology Algorithm__
+
+First, the cost has to be estimated and then the minimal and most optimal point between 2 APCs.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f343682f-078a-4a36-88fe-e4854d400f4c)
 
  
 </details>
