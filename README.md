@@ -908,19 +908,87 @@ __Steps to include new cell in synthesis__
 
 To include custom cell into syntheis:
 1) Copy file to picorv32a location
-2)In the config.tcl file, make the following changes.
+2)In the config.json file, make the following changes.
 
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fc43b448-01ea-4165-9aa2-4850a3771516)
+```
+
+{
+    "DESIGN_NAME": "picorv32",
+    "VERILOG_FILES": "dir::src/picorv32a.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "DIODE_ON_PORTS": "in",
+    "GPL_CELL_PADDING": 2,
+    "DPL_CELL_PADDING": 2,
+    "CLOCK_PERIOD": 24,
+    "FP_CORE_UTIL": 35,
+    "PL_RANDOM_GLB_PLACEMENT": 1,
+    "PL_TARGET_DENSITY": 0.5,
+    "FP_SIZING": "relative",
+    "LIB_SYNTH":"dir::src/sky130_fd_sc_hd__typical.lib",
+    "LIB_FASTEST":"dir::src/sky130_fd_sc_hd__fast.lib",
+    "LIB_SLOWEST":"dir::src/sky130_fd_sc_hd__slow.lib",
+    "LIB_TYPICAL":"dir::src/sky130_fd_sc_hd__typical.lib",
+    "TEST_EXTERNAL_GLOB":"dir::/src/*",
+    "SYNTH_DRIVING_CELL":"sky130_vsdinv",
+    "MAX_FANOUT_CONSTRAINT": 4,
+    "pdk::sky130*": {
+        "MAX_FANOUT_CONSTRAINT": 6,
+        "scl::sky130_fd_sc_ms": {
+            "FP_CORE_UTIL": 30
+        }
+    }
+}
+
+```
 
 
 3)Now run openlane
 
 
+```
+prep -design picorv32a
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+
+```
+
+SYnthesis report:
+
+Since the custom standard cell has been plugged into the openLANE flow, it would be visible in the layout.
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/bab891bf-70cc-4d79-b5ac-96017abee44c)
+
+
+__Delay Tables__ 
+
+ We encounter several types of delays in ASIC design. They are as follows:Gate delay or Intrinsic delay,Net delay or Interconnect delay or Wire delay or Extrinsic delay or Flight time, Transition or Slew,Propagation delay,Contamination delay. Wire delays or extrinsic delays are calculated using output drive strength, input capacitance and wire load models. Other delays are intrinsic properties of each and every gate.
+Delays are interdependent on different electrical properties.Input capacitance of the logic gate is a function of output state, output loads and input slew rate, Internal timing arcs and output slew rate is a function of switching inputs, Capacitance of the wire is dependent on frequency.
+Lets say two scenarios, we have long wire and the cell(X1) is sitting at the end of the wire : the delay of this cell will be different because of the bad transition that caused due to the resistance and capcitances on the long wire. we have the same cell sitting at the end of the short wire: the delay of this will be different since the transistion is not that bad comapred. Eventhough both are same cells, depending upon the input tran, the delay got changed. Same goes with o/p load also.
+
+
+<img width="1440" alt="Screenshot 2023-09-15 at 6 47 15 PM" src="https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9bc5a04d-9e26-456c-99de-1b99e6384d26">
 
 
 
 
 
+__Fix slack__
+
+
+In the synthesis for picrov32a with custom cell, timing analysis log is viewed and is as below:
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/41490bd6-7cde-4c19-a2b0-f705ac2e7b07)
+
+Since clock tree synthesis has not been performed yet, the analysis is with respect to ideal clocks and only setup time slack is taken into consideration. The slack value is the difference between data required time and data arrival time. The worst slack value must be greater than or equal to zero. If a negative slack is obtained, following steps may be followed:
+
+    Change synthesis strategy, synthesis buffering and synthesis sizing values
+    Review maximum fanout of cells and replace cells with high fanout
+
+We perform synthesis and found that it has positive slack and met timing constraints.
 
 
 
