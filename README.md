@@ -1290,6 +1290,11 @@ Sushma R
 ## Acknowledgements
 
 
+Kunal Ghosh, Founder VSD Systems
+Alwin Shaju, Colleague IIITB
+Pruthvi Parate, Colleague IIITB
+
+
 ## References
 
 https://github.com/The-OpenROAD-Project/OpenLane
