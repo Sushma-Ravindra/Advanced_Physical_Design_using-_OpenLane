@@ -985,10 +985,15 @@ In the synthesis for picrov32a with custom cell, timing analysis log is viewed a
 
 Since clock tree synthesis has not been performed yet, the analysis is with respect to ideal clocks and only setup time slack is taken into consideration. The slack value is the difference between data required time and data arrival time. The worst slack value must be greater than or equal to zero. If a negative slack is obtained, following steps may be followed:
 
-    Change synthesis strategy, synthesis buffering and synthesis sizing values
-    Review maximum fanout of cells and replace cells with high fanout
+Change synthesis strategy, synthesis buffering and synthesis sizing values
+Review maximum fanout of cells and replace cells with high fanout
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/ef0e5dff-9f78-40bb-9197-d910748de3a3)
+
 
 We perform synthesis and found that it has positive slack and met timing constraints.
+
 
 
 
