@@ -8,8 +8,9 @@
 - [Day-3-Magic Layout and NG spice characterization](#day-3-magic-layout-and-ng-spice-characterization)
 - [Day4-Prelayout timing analysis and clock tree](#day4-prelayout-timing-analysis-and-clock-tree)
 - [Day-5-Triton Route Features](#day5-triton-route-features)
+- [Contributors](#contributors)
 - [Acknowledgements](#acknowledgements)
-  
+- [References](#references)
 
 
 ## Day1-Introduction
@@ -1281,9 +1282,27 @@ First, the cost has to be estimated and then the minimal and most optimal point 
 
 
 
+## Contributors
 
+Sushma R
 
 
 ## Acknowledgements
 
+
+## References
+
+https://github.com/The-OpenROAD-Project/OpenLane
+
+https://github.com/kunalg123/
+
+https://openlane.readthedocs.io/en/latest/getting_started/installation/installation_ubuntu.html#installation-of-required-packages
+
+https://vsdiat.com/
+
+https://github.com/Devipriya1921/Physical_Design_Using_OpenLANE_Sky130
+
+https://github.com/nickson-jose/vsdstdcelldesign/
+
+http://opencircuitdesign.com/magic/
 
