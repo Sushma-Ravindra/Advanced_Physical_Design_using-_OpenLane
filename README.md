@@ -865,11 +865,37 @@ This is followed for Y, VPWR, VGND
 
 ![Screenshot from 2023-09-11 11-46-21](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/b73e729f-4b92-4f68-9077-990d53069760)
 
-
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/ae8964da-cde7-445c-a7ab-ac3e830c90dc)
 
 
-Thus now, the changes of ports into pins can be viewed on the lef file
+
+Now in the tkcon editor:
+
+```
+Select A area
+
+port class input
+port use signal
+
+Select Y area
+
+port class output
+port use signal
+
+Select VPWR area
+
+port class inout
+port use power
+
+Select VGND area
+
+port class inout
+port use ground
+
+```
+
+
+Thus now, the changes of ports into pins can be viewed on the lef file: Lef file has port to pin conversions.
 
 ![Screenshot from 2023-09-11 12-02-17](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9c8ea8ad-1696-4a40-9f62-b3e87794e297)
 
