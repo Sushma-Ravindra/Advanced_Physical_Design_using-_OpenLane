@@ -7,12 +7,12 @@
 - [Day-2- Floorplan and Library Cells](#day-2--floorplan-and-library-cells)
 - [Day-3-Magic Layout and NG spice characterization](#day-3-magic-layout-and-ng-spice-characterization)
 - [Day4-Prelayout timing analysis and clock tree](#day4-prelayout-timing-analysis-and-clock-tree)
-- [DAY-5-Triton Route Features](#day5-triton-route-features)
+- [Day-5-Triton Route Features](#day5-triton-route-features)
 - [Acknowledgements](#acknowledgements)
   
 
 
-## Day1
+## Day1-Introduction
 
 <details>
   <summary>Talking to Computers</summary>
@@ -139,7 +139,7 @@ Below obtained is the synthesis report:
 
 
 
-## Day2 
+## Day2-Floorplan and Library Cells
 
 <details>
   <summary>Chip Floorplanning Considerations</summary>
@@ -430,7 +430,7 @@ Low transition time = time(slew_high_fall_thr) - time (slew_low_fall_thr)
 
 </details>
 
-## Day3
+## Day3-Magic Layout and NG spice characterization
 
 
 <details>
@@ -830,7 +830,7 @@ tech load sky130A.tech drc check drc style drc(full) drc check
   
 </details>
 
-## Day-4
+## Day-4-Prelayout timing analysis and clock tree
 
 <details>
 	<summary>Timing modelling using delay tables</summary>	
@@ -1146,7 +1146,7 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 
 
 
-## Day-5 
+## Day-5-Triton Route Features
 
 
 <details>
