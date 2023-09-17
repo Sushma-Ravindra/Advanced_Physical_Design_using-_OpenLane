@@ -1225,6 +1225,12 @@ Detail routing is actually the proper wire routing. The tool creates the wire an
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/53489ccd-c24b-4409-b421-e9993e5c85ac)
 
 
+__Layout in MAGIC post routing__
+
+
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/cd165881-a09e-4afb-898b-6c0fe02f771b)
+
 
  
 </details>
