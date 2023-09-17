@@ -1120,10 +1120,11 @@ set_propagated_clock (all_clocks)
 report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
 ```
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9df1b37f-b354-4b62-a412-ad6b6719dcfb)
 
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f93e8387-ca88-4a88-b809-c8c52436ad85)
 
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fff6a48d-59f0-446e-b6da-f456dcef0dbe)
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/778b15e8-35bb-4c63-89fb-b49818f90245)
+
 
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/c740d067-c83f-404b-8812-49b2f5bf41b5)
