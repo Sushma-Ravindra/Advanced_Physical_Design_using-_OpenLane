@@ -1319,7 +1319,7 @@ Sushma R
 
 _Special Mention_
 
-Grateful to Mr Kunal Ghosh, Co-Founder, VLSI SYSTEM DESIGN for providing an excellent platform to learn and expand our skills on RISC_V architecture and ensuring the learning process remained smooth and pleasant. 
+Grateful to Mr Kunal Ghosh, Co-Founder, VLSI SYSTEM DESIGN for providing an excellent platform to learn and expand our skills on ASIC Physical Design and ensuring the learning process remained smooth and pleasant. 
 
 Kunal Ghosh, Founder VSD Systems
 
