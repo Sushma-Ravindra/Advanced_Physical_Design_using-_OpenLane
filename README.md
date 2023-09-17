@@ -1135,6 +1135,10 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
  This command can be used to check clock skew
 
+
+
+
+
 To check all the clock buffers, use these commands in openlane 
 
 ```
@@ -1143,6 +1147,19 @@ set $::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
 echo $::env(CTS_CLK_BUFFER_LIST)
 
 ```
+
+
+To generate PDN 
+
+```
+gen_pdn
+
+```
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/61af7301-4a96-42c8-b600-56e862759fb4)
+
+
+
  
 </details>
 
@@ -1231,9 +1248,13 @@ __Layout in MAGIC post routing__
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/cd165881-a09e-4afb-898b-6c0fe02f771b)
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9caaec95-103a-4d8e-a680-b91040cffad8)
+
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/472dfcee-6b81-4283-95e7-632d8bdc7952)
 
  
 </details>
+
 <details>
 	<summary>Triton Route Features</summary>
 
