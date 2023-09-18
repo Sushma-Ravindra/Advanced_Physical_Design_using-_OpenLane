@@ -1252,8 +1252,6 @@ __Layout in MAGIC post routing__
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/cd165881-a09e-4afb-898b-6c0fe02f771b)
 
-![Screenshot from 2023-09-18 09-44-01](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/65062291-0f36-4351-84a8-b79a2b8665df)
-
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/472dfcee-6b81-4283-95e7-632d8bdc7952)
 
