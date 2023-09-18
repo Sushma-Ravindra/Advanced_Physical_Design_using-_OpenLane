@@ -1019,7 +1019,8 @@ After placement, we check for legality &To check the layout invoke magic from th
 magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
 
 ```
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/4da212c4-83d0-4dca-a992-5287e588f82f)
+![WhatsApp Image 2023-09-18 at 11 51 30 AM](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/45411239-0e95-4e3f-8086-a01115df23f0)
+
 
 
 
