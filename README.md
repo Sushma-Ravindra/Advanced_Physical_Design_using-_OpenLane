@@ -1005,7 +1005,8 @@ run_floorplan
 run_placement
 ```
 
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/5276329a-3c4c-454a-b6e6-2d8499fc8f54)
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/80ffbb0a-6a70-4d79-87f4-d7448a826fea)
+
 
 
 After placement, we check for legality &To check the layout invoke magic from the results/placement directory:
@@ -1016,7 +1017,8 @@ After placement, we check for legality &To check the layout invoke magic from th
 magic -T /home/sushma/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
 
 ```
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/14e817ac-0d87-4fdc-98ff-b8fca1ada511)
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/4da212c4-83d0-4dca-a992-5287e588f82f)
+
 
 
 
