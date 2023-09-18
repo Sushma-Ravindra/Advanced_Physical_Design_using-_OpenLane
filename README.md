@@ -902,8 +902,9 @@ Thus now, the changes of ports into pins can be viewed on the lef file: Lef file
 
 ![Screenshot from 2023-09-11 12-02-17](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/9c8ea8ad-1696-4a40-9f62-b3e87794e297)
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/8b38f3f3-839f-41df-8df5-d13246692b2c)
 
-![Screenshot from 2023-09-11 12-03-05](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/0d4d15af-87d4-42e0-a77d-e5bd761eee98)
+
 
 
 
