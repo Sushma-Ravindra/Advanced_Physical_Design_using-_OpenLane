@@ -964,7 +964,8 @@ SYnthesis report:
 
 Since the custom standard cell has been plugged into the openLANE flow, it would be visible in the layout.
 
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/bab891bf-70cc-4d79-b5ac-96017abee44c)
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/aaf918fb-1810-4b40-93ce-d041dcd04c96)
+
 
 
 __Delay Tables__ 
