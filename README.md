@@ -1005,8 +1005,8 @@ run_floorplan
 run_placement
 ```
 
+![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/5276329a-3c4c-454a-b6e6-2d8499fc8f54)
 
-![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/fe9f85df-e808-467b-bf66-9182ca7c8b32)
 
 After placement, we check for legality &To check the layout invoke magic from the results/placement directory:
 
