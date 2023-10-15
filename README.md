@@ -16,10 +16,10 @@
 ## Day1-Introduction
 
 <details>
-  <summary>Talking to Computers</summary>
+  <summary>Talking to a Computer</summary>
 
 
-An Arduino board is somewhat similiar to what is aimed to be designed at the end of the course. Breaking its componenets down for better understanding of what it looks like and what is to be designed is what will follow. The Arduino processr contains most essentially, an SOC RISCV chip, pads, and ssome foundary Ips such as ADC,SRAM DSP etc. It also contains Macros such as SPI block etc.
+A Arduino board is somewhat similiar to what is aimed to be designed at the end of the course. Breaking its componenets down for better understanding of what it looks like and what is to be designed is what will follow. The Arduino processr contains most essentially, an SOC RISCV chip, pads, and ssome foundary Ips such as ADC,SRAM DSP etc. It also contains Macros such as SPI block etc.
 
 ![image](https://github.com/Sushma-Ravindra/Advanced_Physical_Design_using-_OpenLane/assets/141133883/f42b60ad-803f-44a3-a747-4b8b5c90363b)
 
